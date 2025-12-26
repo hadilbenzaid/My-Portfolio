@@ -5,15 +5,42 @@ const Contact: React.FC = () => {
   const [status, setStatus] = useState<string | null>(null);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const handleSubmit = () => {
-    if (!formState.name || !formState.email || !formState.message) return;
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjqnkwk';
+
+  const handleSubmit = async () => {
+    if (!formState.name || !formState.email || !formState.message) {
+      setStatus('error');
+      setTimeout(() => setStatus(null), 3000);
+      return;
+    }
     
     setStatus('sending');
-    setTimeout(() => {
-      setStatus('success');
-      setFormState({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus(null), 5000);
-    }, 1500);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormState({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus(null), 5000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus(null), 3000);
+      }
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus(null), 3000);
+    }
   };
 
   return (
@@ -26,11 +53,14 @@ const Contact: React.FC = () => {
         <div className="lg:w-1/3 animate-slide-in-left">
           <h2 className="text-4xl md:text-5xl font-serif text-accent-brown mb-8 animate-fade-in-up">Get In Touch</h2>
           <p className="text-accent-brown/60 mb-10 animate-fade-in-up-delayed">
-            Whether you have a project in mind , my inbox is always open.
+            Whether you have a project in mind, my inbox is always open.
           </p>
           
           <div className="space-y-6">
-            <div className="flex items-center gap-4 group hover:translate-x-2 transition-transform duration-300 animate-fade-in-up-more-delayed">
+            <a 
+              href="mailto:hadil.benzaid@univ-constantine2.dz"
+              className="flex items-center gap-4 group hover:translate-x-2 transition-transform duration-300 animate-fade-in-up-more-delayed"
+            >
               <div className="w-12 h-12 bg-lavender/10 flex items-center justify-center rounded-2xl text-lavender group-hover:bg-lavender group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
               </div>
@@ -38,9 +68,14 @@ const Contact: React.FC = () => {
                 <p className="text-xs uppercase tracking-widest text-lavender font-bold">Email Me</p>
                 <p className="text-accent-brown font-medium group-hover:text-lavender transition-colors duration-300">hadil.benzaid@univ-constantine2.dz</p>
               </div>
-            </div>
+            </a>
             
-            <div className="flex items-center gap-4 group hover:translate-x-2 transition-transform duration-300 animate-fade-in-up-most-delayed">
+            <a 
+              href="https://linkedin.com/in/Benzaid-hadil"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 group hover:translate-x-2 transition-transform duration-300 animate-fade-in-up-most-delayed"
+            >
               <div className="w-12 h-12 bg-lavender/10 flex items-center justify-center rounded-2xl text-lavender group-hover:bg-lavender group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               </div>
@@ -48,7 +83,7 @@ const Contact: React.FC = () => {
                 <p className="text-xs uppercase tracking-widest text-lavender font-bold">Professional Profile</p>
                 <p className="text-accent-brown font-medium group-hover:text-lavender transition-colors duration-300">linkedin.com/in/Benzaid-hadil</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -62,6 +97,7 @@ const Contact: React.FC = () => {
                   <label className="block text-xs uppercase tracking-widest text-lavender-dark font-bold mb-2 ml-1">Your Name</label>
                   <input 
                     type="text" 
+                    name="name"
                     value={formState.name}
                     onChange={(e) => setFormState({...formState, name: e.target.value})}
                     onFocus={() => setFocusedField('name')}
@@ -74,6 +110,7 @@ const Contact: React.FC = () => {
                   <label className="block text-xs uppercase tracking-widest text-lavender-dark font-bold mb-2 ml-1">Your Email</label>
                   <input 
                     type="email" 
+                    name="email"
                     value={formState.email}
                     onChange={(e) => setFormState({...formState, email: e.target.value})}
                     onFocus={() => setFocusedField('email')}
@@ -87,6 +124,7 @@ const Contact: React.FC = () => {
                 <label className="block text-xs uppercase tracking-widest text-lavender-dark font-bold mb-2 ml-1">Message</label>
                 <textarea 
                   rows={4} 
+                  name="message"
                   value={formState.message}
                   onChange={(e) => setFormState({...formState, message: e.target.value})}
                   onFocus={() => setFocusedField('message')}
@@ -98,18 +136,25 @@ const Contact: React.FC = () => {
               <button 
                 onClick={handleSubmit}
                 disabled={status === 'sending'}
-                className="w-full bg-lavender text-white font-serif italic text-xl py-4 rounded-xl hover:bg-pink transition-all duration-500 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-2xl disabled:opacity-50 flex items-center justify-center gap-3 relative overflow-hidden group animate-fade-in-scale-most-delayed"
+                className="w-full bg-lavender text-white font-serif italic text-xl py-4 rounded-xl hover:bg-pink transition-all duration-500 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 relative overflow-hidden group animate-fade-in-scale-most-delayed"
               >
                 <span className="relative z-10">
-                  {status === 'sending' ? 'Sending ...' : 'Send Message'}
+                  {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </span>
                 {status === 'success' && <svg className="w-6 h-6 animate-bounce relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>}
                 
                 <span className="absolute inset-0 bg-white/20 transform scale-0 group-hover:scale-100 transition-transform duration-700 rounded-xl"></span>
               </button>
+              
               {status === 'success' && (
                 <p className="mt-4 text-center text-green-600 font-medium text-sm animate-bounce-in">
-                  Thank you! Your message has been sent 
+                  ✨ Thank you! Your message has been sent successfully!
+                </p>
+              )}
+              
+              {status === 'error' && (
+                <p className="mt-4 text-center text-red-600 font-medium text-sm animate-bounce-in">
+                  ⚠️ Oops! Please fill in all fields and try again.
                 </p>
               )}
             </div>
@@ -167,7 +212,8 @@ const Contact: React.FC = () => {
         .animate-fade-in-scale { animation: fade-in-scale 1.2s ease-out 0.7s backwards; }
         .animate-fade-in-scale-delayed { animation: fade-in-scale 1.5s ease-out 0.9s backwards; }
         .animate-fade-in-scale-more-delayed { animation: fade-in-scale 1.5s ease-out 1.1s backwards; }
-        .animate-fade-in-scale-most-delayed { animation: fade-in-scale 1.5s ease-out 1.3s backwards; }   `}</style>
+        .animate-fade-in-scale-most-delayed { animation: fade-in-scale 1.5s ease-out 1.3s backwards; }
+      `}</style>
     </div>
   );
 };

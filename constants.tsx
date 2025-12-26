@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     id: "4",
     title: "Master Learning Platform",
     description:
-      "An educational platform designed for master's students, providing course management, resources sharing, collaborative learning tools, and academic progress tracking. Features include assignment submissions, discussion forums, and grade management.",
+      "An educational platform designed for master's students,and teachers providing projects ,it's state ,informations , resources sharing, collaborative learning tools, and academic progress tracking. Features include assignment submissions, discussion forums, and grade management, projects assignment",
     image: "/images/Welcome.png",
     gallery: [ 
     "/images/Welcome.png",

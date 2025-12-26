@@ -14,7 +14,6 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
     { name: 'Contact', href: '#contact' },
   ];
 
-  // Smooth scroll behavior
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -27,7 +26,6 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
     });
   }, []);
 
-  // Close mobile menu when clicking on a link
   const handleMobileLinkClick = () => {
     setIsMobileMenuOpen(false);
   };

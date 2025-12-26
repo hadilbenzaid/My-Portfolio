@@ -77,7 +77,6 @@ const Skills: React.FC = () => {
         ))}
       </div>
 
-      {/* Decorative floating elements */}
       <div className="absolute right-10 top-1/4 w-16 h-16 border-2 border-lavender/20 rounded-full animate-spin-slow"></div>
       <div className="absolute left-10 bottom-1/4 w-12 h-12 border-2 border-accent-pink/20 rounded-lg animate-bounce-slow"></div>
 

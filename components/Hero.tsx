@@ -33,7 +33,6 @@ const Hero: React.FC = () => {
         }}
       ></div>
       
-      {/* Additional floating elements */}
       <div className="absolute top-1/3 left-1/4 w-32 h-32 bg-lavender/10 rounded-full blur-2xl animate-float-delayed"></div>
 
       <div className="container mx-auto px-6 md:px-12 z-10 flex flex-col md:flex-row items-center gap-12">
@@ -74,7 +73,6 @@ const Hero: React.FC = () => {
              alt="Professional Profile" 
              className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105 cursor-pointer"
              />
-            {/* Decorative corner elements */}
             <div className="absolute -top-4 -right-4 w-20 h-20 border-t-4 border-r-4 border-lavender rounded-tr-3xl opacity-50"></div>
             <div className="absolute -bottom-4 -left-4 w-20 h-20 border-b-4 border-l-4 border-lavender rounded-bl-3xl opacity-50"></div>
           </div>

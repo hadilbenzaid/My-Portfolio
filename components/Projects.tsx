@@ -96,7 +96,6 @@ const Projects: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-lavender/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
-                {/* View Gallery Indicator */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full flex items-center gap-2 shadow-xl transform scale-90 group-hover:scale-100 transition-transform">
                     <svg className="w-5 h-5 text-lavender" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,7 +158,6 @@ const Projects: React.FC = () => {
         </div>
       </div>
 
-      {/* Compact Modal Gallery */}
       {selectedProject && (
         <div 
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-fade-in"
@@ -178,13 +176,11 @@ const Projects: React.FC = () => {
             className="max-w-3xl w-full bg-white rounded-xl overflow-hidden shadow-2xl animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Compact Modal Header */}
             <div className="bg-gradient-to-r from-lavender/10 to-accent-pink/10 px-5 py-4 border-b border-lavender/10">
               <h3 className="text-xl font-serif text-accent-brown">{selectedProject.title}</h3>
               <p className="text-xs text-accent-brown/60 mt-1 line-clamp-2">{selectedProject.description}</p>
             </div>
 
-            {/* Compact Image Display */}
             <div className="relative bg-gray-50">
               {selectedProject.gallery && selectedProject.gallery.length > 0 ? (
                 <div className="relative">
@@ -194,7 +190,6 @@ const Projects: React.FC = () => {
                     className="w-full h-[350px] object-contain"
                   />
                   
-                  {/* Navigation Arrows */}
                   {selectedProject.gallery.length > 1 && (
                     <>
                       <button
@@ -214,7 +209,6 @@ const Projects: React.FC = () => {
                         </svg>
                       </button>
                       
-                      {/* Compact Image Counter */}
                       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-xs font-medium">
                         {currentImageIndex + 1} / {selectedProject.gallery.length}
                       </div>
@@ -230,7 +224,6 @@ const Projects: React.FC = () => {
               )}
             </div>
 
-            {/* Compact Thumbnail Navigation */}
             {selectedProject.gallery && selectedProject.gallery.length > 1 && (
               <div className="px-4 py-3 bg-gray-50 flex gap-2 overflow-x-auto scrollbar-thin">
                 {selectedProject.gallery.map((img, idx) => (
@@ -253,7 +246,6 @@ const Projects: React.FC = () => {
               </div>
             )}
 
-            {/* Compact Modal Footer */}
             <div className="px-5 py-4 bg-gradient-to-r from-lavender/5 to-accent-pink/5 border-t border-lavender/10 flex gap-3 justify-center">
               <a 
                 href={selectedProject.githubLink}
