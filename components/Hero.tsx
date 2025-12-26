@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
           <div className="relative animate-float-gentle">
             <div className="absolute inset-0 bg-lavender/20 rounded-2xl transform rotate-6 translate-x-4 translate-y-4 -z-10 transition-all duration-500 hover:rotate-12 hover:scale-105"></div>
             <img 
-             src="/public/images/logo.jpg" 
+             src="/images/logo.jpg" 
              alt="Professional Profile" 
              className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105 cursor-pointer"
              />
