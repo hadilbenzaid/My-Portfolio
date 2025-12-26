@@ -42,7 +42,7 @@ export const PROJECTS: Project[] = [
     title: "Restaurant Management App",
     description:
       "A modern restaurant management application featuring online ordering, table reservations, menu management, and real-time order tracking. Built with a focus on user experience and seamless customer interactions.",
-    image: "/images/restaurant.jpg",
+    image: "",
     gallery: [  
       
     ],
@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     title: "Master Learning Platform",
     description:
       "An educational platform designed for master's students, providing course management, resources sharing, collaborative learning tools, and academic progress tracking. Features include assignment submissions, discussion forums, and grade management.",
-    image: "/images/master-platform.jpg",
+    image: "",
     gallery: [ 
   
     ],
