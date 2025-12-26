@@ -8,6 +8,8 @@ export const PROJECTS: Project[] = [
       "A comprehensive Property Management System for hotels featuring dashboard analytics, stock management, employee accounts, booking system, and a mobile app for guests with integrated payment processing. Includes real-time booking tracking, revenue monitoring, and staff management.",
     image: "/images/Dashbord.jpg", 
     gallery: [
+      "/images/PMS.png",
+      "/images/PMSW.png",
       "/images/Dashbord.jpg",
       "/images/Stock.jpg",
       "/images/employee.jpg",
@@ -24,7 +26,7 @@ export const PROJECTS: Project[] = [
     title: "Anovia Suites - Guest Mobile App",
     description:
       "A companion mobile application for Anovia Suites guests, offering seamless hotel booking experience with profile management, loyalty rewards system, reservation history, and secure payment integration. Features include room selection, check-in/check-out management, and 24/7 customer support.",
-    image:  "/images/Homepage1.png",
+    image:  "/images/PMS.png",
     gallery: [  
       "/images/Homepage.png",
       "/images/Second.png",
@@ -33,7 +35,7 @@ export const PROJECTS: Project[] = [
       "/images/Profile.png",
       "/images/payment.png",
     ],
-    techStack: ["React Native", "Firebase", "Payment Gateway", "REST API"],
+    techStack: ["React Native", "SQL", "Payment Gateway", "REST API"],
     githubLink: "https://github.com/BouchetitAnfel/Anovia.git",
     liveDemo: null,
   },
@@ -41,13 +43,20 @@ export const PROJECTS: Project[] = [
     id: "3",
     title: "Restaurant Management App",
     description:
-      "A modern restaurant management application featuring online ordering, table reservations, menu management, and real-time order tracking. Built with a focus on user experience and seamless customer interactions.",
-    image: "",
+      "A modern restaurant management application featuring available restaurants in a specefic location, table reservations, menu management, and real-time order tracking. Built with a focus on user experience and seamless customer interactions.",
+    image: "/images/restau.png",
+
     gallery: [  
-      
+     "/images/Location.png",
+     "/images/restau.png" ,
+     "/images/Restauinfo.png" ,
+    "/images/Escalope.png" ,
+        "/images/Book.png",
+
+   
     ],
-    techStack: ["React", "Firebase", "Redux", "Material-UI"],
-    githubLink: "https://github.com/hadilbenzaid/restaurant-app",
+    techStack: ["Flutter", "Firebase"],
+    githubLink: "https://github.com/hadilbenzaid/Dam_Project.git",
     liveDemo: null,
   },
   {
@@ -55,12 +64,15 @@ export const PROJECTS: Project[] = [
     title: "Master Learning Platform",
     description:
       "An educational platform designed for master's students, providing course management, resources sharing, collaborative learning tools, and academic progress tracking. Features include assignment submissions, discussion forums, and grade management.",
-    image: "",
+    image: "/images/Welcome.png",
     gallery: [ 
-  
+    "/images/Welcome.png",
+    "/images/Students.png",
+    "/images/Chats.png"
+
     ],
-    techStack: ["React", "TypeScript", "PostgreSQL", "Express", "Tailwind CSS"],
-    githubLink: "https://github.com/hadilbenzaid/master-platform",
+    techStack: ["React","Node.js", "NPM", "TypeScript", "PostgreSQL", "Express", "Tailwind CSS","Laravel"],
+    githubLink: "https://github.com/hadilbenzaid/daw-project.git",
     liveDemo: null,
   },
   {

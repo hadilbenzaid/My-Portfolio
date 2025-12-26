@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
         <div className="lg:w-1/3 animate-slide-in-left">
           <h2 className="text-4xl md:text-5xl font-serif text-accent-brown mb-8 animate-fade-in-up">Get In Touch</h2>
           <p className="text-accent-brown/60 mb-10 animate-fade-in-up-delayed">
-            Whether you have a project in mind or just want to say hi, my inbox is always open.
+            Whether you have a project in mind , my inbox is always open.
           </p>
           
           <div className="space-y-6">
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
                 className="w-full bg-lavender text-white font-serif italic text-xl py-4 rounded-xl hover:bg-pink transition-all duration-500 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-2xl disabled:opacity-50 flex items-center justify-center gap-3 relative overflow-hidden group animate-fade-in-scale-most-delayed"
               >
                 <span className="relative z-10">
-                  {status === 'sending' ? 'Sending Elegance...' : 'Send Message'}
+                  {status === 'sending' ? 'Sending ...' : 'Send Message'}
                 </span>
                 {status === 'success' && <svg className="w-6 h-6 animate-bounce relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>}
                 

@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Parallax Abstract Background Shapes */}
+      
       <div 
         className="absolute top-20 -left-20 w-64 h-64 bg-lavender-light/20 rounded-full blur-3xl animate-pulse-slow"
         style={{
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
           <span className="inline-block px-4 py-1 mb-6 text-xs uppercase tracking-widest text-lavender font-semibold bg-lavender/10 rounded-full animate-fade-in opacity-0">
             Junior React Developer
           </span>
-          <h1 className="text-5xl md:text-7xl font-serif text-accent-brown mb-6 leading-tight animate-slide-up opacity-0">
+          <h1 className="text-4xl md:text-7xl font-serif text-accent-brown mb-6 leading-tight animate-slide-up opacity-0">
             I'm <span className="text-lavender italic underline decoration-accent-pink decoration-4 hover:decoration-wavy transition-all">Benzaid Hadil</span>
           </h1>
           <p className="text-lg text-accent-brown/70 mb-10 leading-relaxed max-w-xl animate-slide-up-delayed opacity-0">

@@ -42,9 +42,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="text-white/40 text-xs font-medium flex items-center gap-2">
-          &copy; {new Date().getFullYear()} — Made with 
-          <span className="text-red-400 animate-pulse-heart inline-block">❤</span> 
-          React
+          &copy; {new Date().getFullYear()} — Made with React
         </div>
       </div>
 
