@@ -44,9 +44,7 @@ export const PROJECTS: Project[] = [
       "A modern restaurant management application featuring online ordering, table reservations, menu management, and real-time order tracking. Built with a focus on user experience and seamless customer interactions.",
     image: "/images/restaurant.jpg",
     gallery: [  
-      "/images/restaurant-menu.jpg",
-      "/images/restaurant-orders.jpg",
-      "/images/restaurant-reservations.jpg",
+      
     ],
     techStack: ["React", "Firebase", "Redux", "Material-UI"],
     githubLink: "https://github.com/hadilbenzaid/restaurant-app",
@@ -59,9 +57,7 @@ export const PROJECTS: Project[] = [
       "An educational platform designed for master's students, providing course management, resources sharing, collaborative learning tools, and academic progress tracking. Features include assignment submissions, discussion forums, and grade management.",
     image: "/images/master-platform.jpg",
     gallery: [ 
-      "/images/master-courses.jpg",
-      "/images/master-assignments.jpg",
-      "/images/master-grades.jpg",
+  
     ],
     techStack: ["React", "TypeScript", "PostgreSQL", "Express", "Tailwind CSS"],
     githubLink: "https://github.com/hadilbenzaid/master-platform",
